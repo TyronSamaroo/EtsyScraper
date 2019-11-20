@@ -1,0 +1,10 @@
+
+
+#Exclude Intellj .idea file
+.idea
+
+EtsyScraper.iml
+
+
+#Mac File
+.DS_Store
