@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EtsyScraper.iml" filepath="$PROJECT_DIR$/EtsyScraper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EtsyProject.iml" filepath="$PROJECT_DIR$/EtsyProject.iml" />
     </modules>
   </component>
 </project>

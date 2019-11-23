@@ -11,6 +11,14 @@ public class SearchBar extends JPanel implements ActionListener {
     private JTextField searchField;
     private JButton searchButton;
 
+    public JTextField getSearchField() {
+        return searchField;
+    }
+
+    public void setSearchField(JTextField searchField) {
+        this.searchField = searchField;
+    }
+
     public SearchBar(){
         setBorder(BorderFactory.createEtchedBorder());
 
@@ -35,6 +43,7 @@ public class SearchBar extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(searchField.getText());
+        String result = searchField.getText();
 
 
     }
