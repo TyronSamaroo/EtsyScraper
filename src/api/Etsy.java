@@ -2,7 +2,7 @@ package api;
 
 
 /**
- * Provide Query Specifically For Etsy.
+ * Provide Query Specifically For Etsy. Will Also Provide The Search URL
  * @author tyronsamaroo
  */
 public class Etsy {

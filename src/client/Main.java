@@ -24,7 +24,7 @@ public class Main {
         //This returns the entire htmlfile remember this type StringBuilder
         webpageReader.rawHTMLFile();
 
-        EtsyCleanData cleanData = new EtsyCleanData(webpageReader.rawHTMLFile());
+        //EtsyCleanData cleanData = new EtsyCleanData(webpageReader.rawHTMLFile());
 
 
 

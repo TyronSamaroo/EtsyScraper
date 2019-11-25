@@ -13,7 +13,7 @@ import java.net.URLConnection;
  */
 public class WebpageReader {
 
-    public  final String USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6";
+    public  final String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36";
     private String website;
 
 
@@ -60,9 +60,8 @@ public class WebpageReader {
      * @throws Exception
      */
     public  BufferedReader read(String url) throws Exception {
-        InputStream content = (InputStream)getURLInputStream(url);
+        InputStream content = getURLInputStream(url);
         return new BufferedReader (new InputStreamReader(content));
-
     }
 
     /**
@@ -74,9 +73,13 @@ public class WebpageReader {
         StringBuilder contents = new StringBuilder();
         try {
             BufferedReader reader = read(this.website);
+            String line = reader.readLine();
 
-            while (reader.readLine() != null) {
-                contents.append(reader.readLine());
+            while (line != null) {
+                contents.append(line);
+                line = reader.readLine();
+
+                //contents.append(reader.readLine());
             }
         }catch (Exception e){
             System.out.println(e);
@@ -90,6 +93,7 @@ public class WebpageReader {
 
         Etsy etsy = new Etsy("car");
         etsy.getWebpage();
+
         WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
         System.out.println(webpageReader.rawHTMLFile());
 

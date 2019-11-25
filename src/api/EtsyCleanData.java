@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public class EtsyCleanData {
 
-    StringBuilder fileToClean;
+    StringBuilder  fileToClean;
 
     public EtsyCleanData(){
         fileToClean = null;
@@ -26,56 +26,77 @@ public class EtsyCleanData {
         this.fileToClean = fileToClean;
     }
 
+    public StringBuilder getFileToClean() {
+        return fileToClean;
+    }
+
     public String cleanFileForPrice() {
         Pattern p = Pattern.compile("<span\\s+class=\\'currency-value'\\>(\\d*.\\d*)</span>");
         Matcher m = p.matcher(fileToClean);
         StringBuilder output = new StringBuilder();
+        //int count = 0;
 
         while(m.find()) {
             //System.out.println(m.group(1));
             output.append(m.group(1));
             output.append("\n");
+            //System.out.println(count++);
         }
         return output.toString();
     }
 
-    public String cleanFileForDescription() {
-        Pattern p = Pattern.compile("<h2\\s+class=\"text-gray\\s+text-truncate\\s+mb-xs-0\\s+text-body\">\\s+(.*)\\s+<\\/h2>");
+    public StringBuilder cleanFileForDescription() {
+        Pattern p = Pattern.compile("<h2\\s+class=\"text-gray\\s+text-truncate\\s+mb-xs-0\\s+text-body\">\\s+([^>]*)\\s+</h2>");
         Matcher m = p.matcher(fileToClean);
         StringBuilder output = new StringBuilder();
+        int count = 0;
 
         while(m.find()) {
             //System.out.println(m.group(1));
-            output.append(m.group(0));
+            output.append(m.group(1));
             output.append("\n");
+            //System.out.println(count++);
         }
-        return output.toString();
+        return output;
     }
 
     public String cleanFileForImageSrc(){
-        Pattern p = Pattern.compile("<img\\s+.*?\\s+src=(\".*?\")");
+        Pattern p = Pattern.compile("<img\\s+data-listing-card-listing-image\\s+[src|data\\-src]*=\"([^\"]*)\"");
         Matcher m = p.matcher(fileToClean);
         StringBuilder output = new StringBuilder();
+        //int count = 0;
 
         while(m.find()) {
             //System.out.println(m.group(1));
-            output.append(m.group(0));
+            output.append(m.group(1));
             output.append("\n");
+            //System.out.println(count++);
+
         }
         return output.toString();};
 
     public static void main(String[] args) throws Exception {
         Etsy etsy = new Etsy("car");
-        etsy.getWebpage();
-        System.out.println(etsy.getWebpage());
+        //etsy.getWebpage();
+        //System.out.println(etsy.getWebpage());
         WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
-        //webpageReader.rawHTMLFile());
+        //System.out.println(webpageReader.rawHTMLFile());
 
         EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
+        OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), "testnov25125pm.txt");
+        outputData.storeOutput();
+
+
+       // System.out.println(data.getFileToClean());
+
         //System.out.println(webpageReader.rawHTMLFile());
-        //System.out.println(data.cleanFileForPrice());
-        System.out.println(data.cleanFileForImageSrc());
+       // System.out.println(data.cleanFileForPrice());
+       //System.out.println(data.cleanFileForImageSrc());
+
         //System.out.println(data.cleanFileForDescription());
+        //System.out.print(data.cleanFileForDescription() + data.cleanFileForImageSrc() + data.cleanFileForPrice());
+        System.out.println(data.cleanFileForPrice());
+
     }
 
 }

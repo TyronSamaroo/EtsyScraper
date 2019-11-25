@@ -1,9 +1,7 @@
 package api;
 
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Put Data Into A File
@@ -56,6 +54,10 @@ public class InputData {
         this.inputFileName = inputFileName;
     }
 
+
+
+
+
     /**
      * Closes input file
      */
@@ -68,7 +70,7 @@ public class InputData {
     }
 
     public static void main(String[] args) {
-        InputData input = new InputData("websitecar.txt");
+        InputData input = new InputData("data/website/nov251.txt");
         System.out.println(input.getInputFileName());
 
 

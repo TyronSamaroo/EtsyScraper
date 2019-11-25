@@ -14,9 +14,10 @@ import java.nio.channels.FileChannel;
  */
 public class OutputData {
 
+    private StringBuilder text;
     private String fileName;
-    private String text;
-    public OutputData(String text, String fileName){
+
+    public OutputData(StringBuilder text, String fileName){
         this.fileName = "data/website/"+ fileName;
         this.text = text;
 
@@ -28,11 +29,11 @@ public class OutputData {
         this.fileName = fileName;
     }
 
-    public String getText() {
+    public StringBuilder getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(StringBuilder text) {
         this.text = text;
     }
 
@@ -40,7 +41,7 @@ public class OutputData {
     {
         RandomAccessFile stream = new RandomAccessFile(this.fileName, "rw");
         FileChannel channel = stream.getChannel();
-        byte[] strBytes = this.text.getBytes();
+        byte[] strBytes = this.text.toString().getBytes();
         ByteBuffer buffer = ByteBuffer.allocate(strBytes.length);
         buffer.put(strBytes);
         buffer.flip();
@@ -54,9 +55,9 @@ public class OutputData {
         String Query = "car";
         String search = Etsy + Query;
         WebpageReader reader = new WebpageReader(search);
-        //reader.rawHTMLFile();
+        reader.rawHTMLFile();
         //System.out.println(reader.rawHTMLFile());
-        OutputData out = new OutputData(reader.rawHTMLFile().toString(),"checkthis.txt");
+        OutputData out = new OutputData(reader.rawHTMLFile(),"nov2511121.txt");
         out.storeOutput();
 
 
