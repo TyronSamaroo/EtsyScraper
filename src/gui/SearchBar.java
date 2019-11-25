@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ * SearchBar is where the user input a search criteria for Etsy.
+ * @author tyronsamaroo
+ */
 public class SearchBar extends JPanel implements ActionListener {
 
     private JLabel searchLabel;

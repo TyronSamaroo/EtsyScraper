@@ -7,6 +7,11 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
+
+/**
+ * Output Data to a File
+ * @author tyronsamaroo
+ */
 public class OutputData {
 
     private String fileName;

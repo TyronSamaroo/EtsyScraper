@@ -9,6 +9,7 @@ import java.net.URLConnection;
 
 /**
  * This class purpose is to read the given webpage
+ * @author tyronsamaroo
  */
 public class WebpageReader {
 

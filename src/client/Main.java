@@ -7,6 +7,7 @@ import api.WebpageReader;
 
 /**
  * This is where client can run the program.
+ * @author tyronsamaroo
  */
 public class Main {
 

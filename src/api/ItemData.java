@@ -1,5 +1,9 @@
 package api;
 
+/**
+ * Relevent Information About Search Result
+ * @author tyronsamaroo
+ */
 public class ItemData {
 
     private String itemText;

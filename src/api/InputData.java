@@ -5,7 +5,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
+/**
+ * Put Data Into A File
+ * @author tyronsamaroo
+ */
 public class InputData {
 
 

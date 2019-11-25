@@ -2,7 +2,7 @@ package api;
 
 
 /**
- * Will search the Etsy website based on provided user input
+ * Provide Query Specifically For Etsy.
  * @author tyronsamaroo
  */
 public class Etsy {

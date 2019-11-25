@@ -1,5 +1,9 @@
 package api;
 
+/**
+ * Parses Search Results From Search Result
+ * @author tyronsamaroo
+ */
 public class EtsyParser {
 
     StringBuilder RawHTML;

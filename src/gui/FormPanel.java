@@ -5,6 +5,10 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.util.concurrent.Flow;
 
+/**
+ * User select information.This will be use to select a results generated.
+ * @author tyronsamaroo
+ */
 public class FormPanel extends JPanel {
 
     private JLabel searchLabel;

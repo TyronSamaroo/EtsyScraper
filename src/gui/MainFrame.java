@@ -3,6 +3,10 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * MainFrame used to connect all components of the gui together.
+ * @author tyronsamaroo
+ */
 public class MainFrame extends JFrame {
 
 

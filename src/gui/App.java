@@ -3,7 +3,8 @@ package gui;
 import javax.swing.*;
 
 /**
- * This runs the App. This is used I want to implement multithreading in my application.
+ * This runs the App using Swing.This is used I want to implement multithreading in my application.
+ * @author tyronsamaroo
  *
  */
 public class App {

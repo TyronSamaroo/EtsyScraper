@@ -4,7 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * This will clean the data specificly
+ * This Will Clean Response From Etsy.
+ * @author tyronsamaroo
  */
 public class EtsyCleanData {
 
