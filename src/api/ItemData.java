@@ -6,24 +6,24 @@ package api;
  */
 public class ItemData {
 
-    private String itemText;
+    private String itemDescription;
     private String itemPrice;
     private String imageLink;
 
 
-    public ItemData(String itemText, String itemPrice, String imageLink){
+    public ItemData(String itemDescription, String itemPrice, String imageLink){
 
-        this.itemText = itemText;
+        this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
         this.imageLink = imageLink;
     }
 
-    public String getItemText() {
-        return itemText;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setItemText(String itemText) {
-        this.itemText = itemText;
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
     public String getItemPrice() {
@@ -40,5 +40,18 @@ public class ItemData {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    @Override
+    public String toString() {
+        return "itemDescription: " + itemDescription + "itemPrice: " + itemPrice + "imageLink: " + imageLink;
+     }
+
+    public static void main(String[] args) {
+
+
+        ItemData itemData = new ItemData("dda","dawd","dwad");
+        System.out.println(itemData);
+
     }
 }

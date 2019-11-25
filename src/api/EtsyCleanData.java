@@ -30,6 +30,10 @@ public class EtsyCleanData {
         return fileToClean;
     }
 
+    /**
+     * Clean the RawHTML from Website and display all the Prices
+     * @return A string of all the prices
+     */
     public String cleanFileForPrice() {
         Pattern p = Pattern.compile("<span\\s+class=\\'currency-value'\\>(\\d*.\\d*)</span>");
         Matcher m = p.matcher(fileToClean);
@@ -45,6 +49,10 @@ public class EtsyCleanData {
         return output.toString();
     }
 
+    /**
+     * Clean the RawHTML from Website and display all the Description
+     * @return A string of all the Description
+     */
     public StringBuilder cleanFileForDescription() {
         Pattern p = Pattern.compile("<h2\\s+class=\"text-gray\\s+text-truncate\\s+mb-xs-0\\s+text-body\">\\s+([^>]*)\\s+</h2>");
         Matcher m = p.matcher(fileToClean);
@@ -60,6 +68,10 @@ public class EtsyCleanData {
         return output;
     }
 
+    /**
+     * Clean the RawHTML from Website and display all the Images
+     * @return String of all the links to the Images
+     */
     public String cleanFileForImageSrc(){
         Pattern p = Pattern.compile("<img\\s+data-listing-card-listing-image\\s+[src|data\\-src]*=\"([^\"]*)\"");
         Matcher m = p.matcher(fileToClean);
@@ -95,7 +107,20 @@ public class EtsyCleanData {
 
         //System.out.println(data.cleanFileForDescription());
         //System.out.print(data.cleanFileForDescription() + data.cleanFileForImageSrc() + data.cleanFileForPrice());
-        System.out.println(data.cleanFileForPrice());
+        //System.out.println(data.cleanFileForPrice());
+        //System.out.println(data.cleanFileForPrice().split("\n").length);
+
+        String stringToSplit = data.cleanFileForPrice();
+        String[] tempArray;
+        tempArray = stringToSplit.split("\n");
+
+
+
+        for (int i = 0; i < data.cleanFileForPrice().split("\n").length; i++) {
+            System.out.println(tempArray[i]);
+
+
+        }
 
     }
 

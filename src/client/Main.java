@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         //Call Etsy and provide it with the query;
+
         Etsy etsy = new Etsy("car");
         //This is the webpage that you will provide
         etsy.getWebpage();
