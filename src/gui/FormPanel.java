@@ -7,6 +7,7 @@ import java.util.concurrent.Flow;
 
 /**
  * User select information.This will be use to select a results generated.
+ *
  * @author tyronsamaroo
  */
 public class FormPanel extends JPanel {
@@ -14,11 +15,11 @@ public class FormPanel extends JPanel {
     private JLabel searchLabel;
     private JTextField searchField;
 
-    public FormPanel(){
+    public FormPanel() {
 
 
         Border innerBorder = BorderFactory.createTitledBorder("User Input");
-        Border outerBorder = BorderFactory.createEmptyBorder(5,5,5,5);
+        Border outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
         setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
         setLayout(new FlowLayout(FlowLayout.LEFT));
         add(searchLabel);

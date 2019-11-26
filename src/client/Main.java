@@ -7,17 +7,22 @@ import api.WebpageReader;
 
 /**
  * This is where client can run the program.
+ *
  * @author tyronsamaroo
  */
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
+
+
         //Call Etsy and provide it with the query;
 
-        Etsy etsy = new Etsy("car");
+        Etsy etsy = new Etsy(args[0]);
+        //Etsy etsy = new Etsy("car");
         //This is the webpage that you will provide
         etsy.getWebpage();
+        System.out.println(etsy.getWebpage());
 
         //Calls Webpage reader to read the given webpage
         WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
@@ -26,10 +31,6 @@ public class Main {
         webpageReader.rawHTMLFile();
 
         //EtsyCleanData cleanData = new EtsyCleanData(webpageReader.rawHTMLFile());
-
-
-
-
 
 
     }

@@ -9,7 +9,7 @@ public class RequestToHtmlFile {
     private OutputData outputData;
     private Etsy etsy;
 
-    public RequestToHtmlFile(){
+    public RequestToHtmlFile() {
         this.webpageReader = null;
         this.outputData = null;
         this.etsy = null;
@@ -44,8 +44,7 @@ public class RequestToHtmlFile {
         requestToHtmlFile.setEtsy(new Etsy("car"));
         //requestToHtmlFile.setWebpageReader(new WebpageReader(requestToHtmlFile.getEtsy().getWebpage()));
         requestToHtmlFile.setWebpageReader(new WebpageReader(new Etsy("car").getWebpage()));
-        requestToHtmlFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(),"test1234.txt"));
-
+        requestToHtmlFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(), "test1234.txt"));
 
 
         //System.out.println(requestToHtmlFile.getEtsy().getWebpage());

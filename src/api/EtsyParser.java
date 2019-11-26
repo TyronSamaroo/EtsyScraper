@@ -2,16 +2,18 @@ package api;
 
 /**
  * Parses Search Results From Search Result
+ *
  * @author tyronsamaroo
  */
 public class EtsyParser {
 
     StringBuilder RawHTML;
 
-    public EtsyParser(){
+    public EtsyParser() {
         RawHTML = null;
     }
-    public EtsyParser(StringBuilder RawHTML){
+
+    public EtsyParser(StringBuilder RawHTML) {
         this.RawHTML = RawHTML;
     }
 
@@ -26,7 +28,6 @@ public class EtsyParser {
     public static void main(String[] args) {
 
 
-
 //        if (args.length == 0){
 //            System.out.println("Enter Search Term");
 //            Scanner in = new Scanner(System.in);
@@ -36,10 +37,6 @@ public class EtsyParser {
 //            String search = args[0];
 //            System.out.println(search);
 //        }
-
-
-
-
 
 
     }

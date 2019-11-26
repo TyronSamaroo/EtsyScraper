@@ -2,6 +2,7 @@ package api;
 
 /**
  * Relevent Information About Search Result
+ *
  * @author tyronsamaroo
  */
 public class ItemData {
@@ -11,7 +12,7 @@ public class ItemData {
     private String imageLink;
 
 
-    public ItemData(String itemDescription, String itemPrice, String imageLink){
+    public ItemData(String itemDescription, String itemPrice, String imageLink) {
 
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
@@ -45,13 +46,15 @@ public class ItemData {
     @Override
     public String toString() {
         return "itemDescription: " + itemDescription + "itemPrice: " + itemPrice + "imageLink: " + imageLink;
-     }
+    }
 
     public static void main(String[] args) {
 
 
-        ItemData itemData = new ItemData("dda","dawd","dwad");
+        ItemData itemData = new ItemData("dda", "dawd", "dwad");
         System.out.println(itemData);
+
+
 
     }
 }

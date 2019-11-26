@@ -5,6 +5,7 @@ import java.io.*;
 
 /**
  * Put Data Into A File
+ *
  * @author tyronsamaroo
  */
 public class InputData {
@@ -20,19 +21,20 @@ public class InputData {
      */
     private String inputFileName;
 
-    public InputData(){
+    public InputData() {
         inputFileName = null;
     }
 
     /**
      * Constructs a new FileWriter and FileReader
+     *
      * @param inputFileName The name of the file to be read
      */
-    public InputData(String inputFileName){
+    public InputData(String inputFileName) {
 
         try {
             reader = new BufferedReader(new FileReader(inputFileName));
-        }catch ( IOException e ){
+        } catch (IOException e) {
             System.out.println("Error opening input file!");
         }
         this.inputFileName = inputFileName;
@@ -42,20 +44,16 @@ public class InputData {
     /**
      * @return Input File name
      */
-    public String getInputFileName(){
+    public String getInputFileName() {
         return this.inputFileName;
     }
 
     /**
-     *
      * @param inputFileName Sets the Input File
      */
     public void setInputFileName(String inputFileName) {
         this.inputFileName = inputFileName;
     }
-
-
-
 
 
     /**
@@ -64,7 +62,7 @@ public class InputData {
     public void close() {
         try {
             reader.close();
-        }catch ( IOException e ){
+        } catch (IOException e) {
             System.out.println("Error Closing input file!");
         }
     }

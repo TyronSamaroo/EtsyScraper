@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * SearchBar is where the user input a search criteria for Etsy.
+ *
  * @author tyronsamaroo
  */
 public class SearchBar extends JPanel implements ActionListener {
@@ -24,7 +25,7 @@ public class SearchBar extends JPanel implements ActionListener {
         this.searchField = searchField;
     }
 
-    public SearchBar(){
+    public SearchBar() {
         setBorder(BorderFactory.createEtchedBorder());
 
 

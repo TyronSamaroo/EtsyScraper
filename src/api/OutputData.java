@@ -1,7 +1,6 @@
 package api;
 
 
-
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -10,6 +9,7 @@ import java.nio.channels.FileChannel;
 
 /**
  * Output Data to a File
+ *
  * @author tyronsamaroo
  */
 public class OutputData {
@@ -17,14 +17,16 @@ public class OutputData {
     private StringBuilder text;
     private String fileName;
 
-    public OutputData(StringBuilder text, String fileName){
-        this.fileName = "data/website/"+ fileName;
+    public OutputData(StringBuilder text, String fileName) {
+        this.fileName = "data/website/" + fileName;
         this.text = text;
 
     }
+
     public String getFileName() {
         return fileName;
     }
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
@@ -37,8 +39,7 @@ public class OutputData {
         this.text = text;
     }
 
-    public void storeOutput() throws IOException
-    {
+    public void storeOutput() throws IOException {
         RandomAccessFile stream = new RandomAccessFile(this.fileName, "rw");
         FileChannel channel = stream.getChannel();
         byte[] strBytes = this.text.toString().getBytes();
@@ -57,7 +58,7 @@ public class OutputData {
         WebpageReader reader = new WebpageReader(search);
         reader.rawHTMLFile();
         //System.out.println(reader.rawHTMLFile());
-        OutputData out = new OutputData(reader.rawHTMLFile(),"nov2511121.txt");
+        OutputData out = new OutputData(reader.rawHTMLFile(), "nov2511121.txt");
         out.storeOutput();
 
 
