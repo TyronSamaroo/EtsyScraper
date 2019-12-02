@@ -11,7 +11,12 @@ public class ItemData {
     private String itemPrice;
     private String imageLink;
 
+    public  ItemData(){
+        this.itemDescription = null;
+        this.itemPrice = null;
+        this.imageLink = null;
 
+    }
     public ItemData(String itemDescription, String itemPrice, String imageLink) {
 
         this.itemDescription = itemDescription;

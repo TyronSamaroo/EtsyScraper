@@ -135,6 +135,14 @@ public class EtsyCleanData {
         priceArray = stringToSplitPrice.split("\n");
         descriptionArray = stringToSplitDescription.split("\n");
         imageLinkArray = stringToSplitImageSrc.split("\n");
+        ArrayList<ItemData> itemData = new ArrayList<>();
+        for (int i = 0; i < priceArray.length; i++) {
+            String price = priceArray[i];
+            String description = descriptionArray[i];
+            String image = imageLinkArray[i];
+            ItemData item = new ItemData(description,price,image);
+            itemData.add(item);
+        }
 
 
         System.out.println("test" + priceArray[0]);
