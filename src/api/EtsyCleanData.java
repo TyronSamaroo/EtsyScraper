@@ -154,8 +154,15 @@ public class EtsyCleanData {
         System.out.println(data.cleanFileForPrice().split("\n").length);
         System.out.println(data.cleanFileForDescription().toString().split("\n").length);
         System.out.println(data.cleanFileForImageSrc().split("\n").length);
-        System.out.println(table.entrySet());
+//        System.out.println(table.entrySet());
+//        System.out.println(table.entrySet().size());
 
+
+//        for (int i = 0; i < table.entrySet().size() - 1; i++) {
+//            System.out.println(table.elements().asIterator().next().get(i));
+//
+//        }
+        System.out.println(table.entrySet());
 
 
 //        input.put(1, "a");

@@ -2,17 +2,25 @@ package api;
 
 
 /**
- * Provide the Html
+ * Provide Etsy Object that has Query
+ * Provide Webpage Reader that read webpage based on Etsy Query
+ * Provide Output File to Place Data
  */
-public class RequestToHtmlFile {
+public class StoreRawRequestToFile {
     private WebpageReader webpageReader;
     private OutputData outputData;
     private Etsy etsy;
 
-    public RequestToHtmlFile() {
+    public StoreRawRequestToFile() {
         this.webpageReader = null;
         this.outputData = null;
         this.etsy = null;
+    }
+    public StoreRawRequestToFile(Etsy etsy, WebpageReader webpageReader, OutputData outputData){
+        this.webpageReader = webpageReader;
+        this.outputData = outputData;
+        this.etsy = etsy;
+
     }
 
     public void setEtsy(Etsy etsy) {
@@ -40,11 +48,11 @@ public class RequestToHtmlFile {
     }
 
     public static void main(String[] args) throws Exception {
-        RequestToHtmlFile requestToHtmlFile = new RequestToHtmlFile();
-        requestToHtmlFile.setEtsy(new Etsy("car"));
+        StoreRawRequestToFile storeRawRequestToFile = new StoreRawRequestToFile();
+        storeRawRequestToFile.setEtsy(new Etsy("car"));
         //requestToHtmlFile.setWebpageReader(new WebpageReader(requestToHtmlFile.getEtsy().getWebpage()));
-        requestToHtmlFile.setWebpageReader(new WebpageReader(new Etsy("car").getWebpage()));
-        requestToHtmlFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(), "test1234.txt"));
+        storeRawRequestToFile.setWebpageReader(new WebpageReader(new Etsy("car").getWebpage()));
+        storeRawRequestToFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(), "test1234.txt"));
 
 
         //System.out.println(requestToHtmlFile.getEtsy().getWebpage());

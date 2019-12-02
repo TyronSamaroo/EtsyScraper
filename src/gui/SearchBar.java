@@ -1,5 +1,8 @@
 package gui;
 
+import api.Etsy;
+import api.WebpageReader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -50,6 +53,10 @@ public class SearchBar extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         System.out.println(searchField.getText());
         String result = searchField.getText();
+        Etsy etsy = new Etsy(searchField.getText());
+        WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
+
+
 
 
     }

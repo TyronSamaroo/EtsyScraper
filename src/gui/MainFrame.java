@@ -12,14 +12,23 @@ public class MainFrame extends JFrame {
 
 
     private SearchBar searchBar;
+    private FormPanel formPanel;
+    private DisplayArea displayArea;
 
-    public MainFrame() {
+    public MainFrame() throws Exception {
 
         searchBar = new SearchBar();
+        formPanel = new FormPanel();
+        displayArea = new DisplayArea();
 
 
         setLayout(new BorderLayout());
         add(searchBar, BorderLayout.NORTH);
+        add(formPanel, BorderLayout.WEST);
+        add(displayArea,BorderLayout.CENTER);
+
+
+
 
 
         setSize(1200, 800);
