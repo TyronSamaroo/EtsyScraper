@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class MainFrame extends JFrame {
 
 
+
     private SearchBar searchBar;
     private FormPanel formPanel;
     private DisplayArea displayArea;
@@ -29,6 +30,7 @@ public class MainFrame extends JFrame {
         searchBar.searchButton.addActionListener(e -> {
 
             try {
+                revalidate();
 
 //               // System.out.println("Hi");
 //                //System.out.println(searchBar.getSearchField().getText());

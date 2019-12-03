@@ -60,7 +60,7 @@ public class SearchBar extends JPanel implements ActionListener {
             Etsy etsy = new Etsy(searchField.getText());
             WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
             EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
-            OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), "testnov25125pm.txt");
+            OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), result +".txt");
             outputData.storeOutput();
             String stringToSplitPrice = data.cleanFileForPrice();
             String stringToSplitDescription = data.cleanFileForDescription();
@@ -104,7 +104,7 @@ public class SearchBar extends JPanel implements ActionListener {
 
             add(new JScrollPane(table));
 
-
+            revalidate();
 
         } catch (Exception ex) {
             ex.printStackTrace();
