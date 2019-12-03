@@ -1,6 +1,8 @@
 package api;
 
 
+import java.io.File;
+
 /**
  * Provide Etsy Object that has Query
  * Provide Webpage Reader that read webpage based on Etsy Query
@@ -52,7 +54,8 @@ public class StoreRawRequestToFile {
         storeRawRequestToFile.setEtsy(new Etsy("car"));
         //requestToHtmlFile.setWebpageReader(new WebpageReader(requestToHtmlFile.getEtsy().getWebpage()));
         storeRawRequestToFile.setWebpageReader(new WebpageReader(new Etsy("car").getWebpage()));
-        storeRawRequestToFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(), "test1234.txt"));
+        File f = new File("data/website/" + "car" + "txt");
+        storeRawRequestToFile.setOutputData(new OutputData(new WebpageReader(new Etsy("car").getWebpage()).rawHTMLFile(), f));
 
 
         //System.out.println(requestToHtmlFile.getEtsy().getWebpage());

@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -60,7 +61,8 @@ public class SearchBar extends JPanel implements ActionListener {
             Etsy etsy = new Etsy(searchField.getText());
             WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
             EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
-            OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), result +".txt");
+            File f = new File("data/website/" + searchField.getText() + ".txt");
+            OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), f);
             outputData.storeOutput();
             String stringToSplitPrice = data.cleanFileForPrice();
             String stringToSplitDescription = data.cleanFileForDescription();

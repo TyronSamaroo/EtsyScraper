@@ -1,5 +1,6 @@
 package api;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.regex.Matcher;
@@ -109,7 +110,8 @@ public class EtsyCleanData {
         //System.out.println(webpageReader.rawHTMLFile());
 
         EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
-        OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), "testnov25125pm.txt");
+        File f = new File("data/website/" + etsy.getQuery()+".txt");
+        OutputData outputData = new OutputData(webpageReader.rawHTMLFile(),f);
         outputData.storeOutput();
 
 

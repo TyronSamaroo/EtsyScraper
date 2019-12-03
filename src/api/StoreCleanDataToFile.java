@@ -1,5 +1,7 @@
 package api;
 
+import java.io.File;
+
 public class StoreCleanDataToFile {
 
     private Etsy etsyQuery;
@@ -69,8 +71,8 @@ public class StoreCleanDataToFile {
         storeCleanDataToFile.getEtsyCleanData().cleanFileForPrice();
         storeCleanDataToFile.getEtsyCleanData().cleanFileForImageSrc();
         storeCleanDataToFile.getEtsyCleanData().cleanFileForDescription();
-
-        storeCleanDataToFile.setOutputData(new OutputData(storeCleanDataToFile.getEtsyCleanData().fileToClean,"cleandata.txt"));
+        File f = new File("data/website/" + "cleandata.txt");
+        storeCleanDataToFile.setOutputData(new OutputData(storeCleanDataToFile.getEtsyCleanData().fileToClean,f));
         System.out.println();
 
     }

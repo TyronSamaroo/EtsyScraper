@@ -1,6 +1,7 @@
 package api;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -15,19 +16,19 @@ import java.nio.channels.FileChannel;
 public class OutputData {
 
     private StringBuilder text;
-    private String fileName;
+    private File fileName;
 
-    public OutputData(StringBuilder text, String fileName) {
-        this.fileName = "data/website/" + fileName;
+    public OutputData(StringBuilder text, File fileName) {
+        this.fileName = fileName;
         this.text = text;
 
     }
 
-    public String getFileName() {
+    public File getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
+    public void setFileName(File fileName) {
         this.fileName = fileName;
     }
 
@@ -58,8 +59,12 @@ public class OutputData {
         WebpageReader reader = new WebpageReader(search);
         reader.rawHTMLFile();
         //System.out.println(reader.rawHTMLFile());
-        OutputData out = new OutputData(reader.rawHTMLFile(), "abc.txt");
-        out.storeOutput();
+        System.out.println("car");
+        File f = new File("data/website/" + "abc.txt");
+
+        OutputData out = new OutputData(reader.rawHTMLFile(),f);
+        //out.storeOutput();
+
 
 
         //Need to output it to a file
