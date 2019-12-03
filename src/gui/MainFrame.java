@@ -84,35 +84,18 @@ public class MainFrame extends JFrame {
 //                add(new JScrollPane(table));
 //
 
-
-
-
-
-
-
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-
-
-
-
         });
-
-
-
 
 
         setLayout(new BorderLayout());
         add(searchBar, BorderLayout.NORTH);
         add(formPanel, BorderLayout.WEST);
-        add(displayArea,BorderLayout.CENTER);
+        add(displayArea,BorderLayout.EAST);
 
-
-
-
-
-        setSize(1200, 800);
+        setSize(1000, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
