@@ -3,6 +3,8 @@ package gui;
 import api.*;
 
 import javax.swing.*;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
@@ -26,6 +28,32 @@ public class MainFrame extends JFrame {
         searchBar = new SearchBar();
         formPanel = new FormPanel();
         displayArea = new DisplayArea();
+
+
+       formPanel.downloadBtn.addActionListener(e -> {
+           String[] header = { "Description", "Price", "Link" };
+
+          // System.out.println(searchBar.table.getSelectedRow());
+           //searchBar.table.getValueAt(searchBar.table.getSelectedRow(),searchBar.table.getSelectedColumn());
+           System.out.println(searchBar.table.getValueAt(searchBar.table.getSelectedRow(),2));
+           String img = (String) searchBar.table.getValueAt(searchBar.table.getSelectedRow(),2);
+           String name = ((String) searchBar.table.getValueAt(searchBar.table.getSelectedRow(),0)).trim();
+
+
+
+           ImageDownload imageDownload = new ImageDownload();
+           String imageDir = "data/image/";
+
+
+           String filename = name;
+           System.out.println(name);
+
+           imageDownload.downloadImage(img,imageDir + name + ".jpg");
+
+          // System.out.println(searchBar.infoTable.getValueAt(searchBar.table.getSelectedRow(),2));
+
+
+       });
 
         searchBar.searchButton.addActionListener(e -> {
 
@@ -90,6 +118,8 @@ public class MainFrame extends JFrame {
         });
 
 
+
+
         setLayout(new BorderLayout());
         add(searchBar, BorderLayout.NORTH);
         add(formPanel, BorderLayout.WEST);
@@ -100,5 +130,13 @@ public class MainFrame extends JFrame {
         setVisible(true);
 
 
+    }
+
+    public static void downloadImage(int row){
+
+    }
+
+    public static String img(int id){
+    return "A";
     }
 }

@@ -21,8 +21,8 @@ public class SearchBar extends JPanel implements ActionListener {
     private JLabel            searchLabel;
     private JTextField        searchField;
     public  JButton           searchButton;
-    private DefaultTableModel infoTable;
-    private JTable            table;
+    public DefaultTableModel infoTable;
+    public JTable            table;
 
     public JTextField getSearchField() {
         return searchField;
