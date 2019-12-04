@@ -59,11 +59,12 @@ public class OutputData {
         WebpageReader reader = new WebpageReader(search);
         reader.rawHTMLFile();
         //System.out.println(reader.rawHTMLFile());
-        System.out.println("car");
-        File f = new File("data/website/" + "abc.txt");
+        System.out.println("card");
+        File f = new File("data/website/" + "timmy.txt");
+        System.out.println(f.getAbsolutePath());
 
         OutputData out = new OutputData(reader.rawHTMLFile(),f);
-        //out.storeOutput();
+        out.storeOutput();
 
 
 

@@ -3,6 +3,8 @@ package gui;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.concurrent.Flow;
 
 /**
@@ -10,10 +12,10 @@ import java.util.concurrent.Flow;
  *
  * @author tyronsamaroo
  */
-public class FormPanel extends JPanel {
+public class FormPanel extends JPanel implements ActionListener {
 
     private JLabel downloadLabel;
-    private JButton downloadBtn;
+    public JButton downloadBtn;
 
     private JTextField searchField;
 
@@ -25,6 +27,15 @@ public class FormPanel extends JPanel {
 
         downloadLabel = new JLabel("Download Image");
         downloadBtn = new JButton("Download");
+
+        downloadBtn.addActionListener(e -> {
+
+                ImageIcon image = new ImageIcon("appdata/images/tempImg.png");
+
+
+
+
+        });
 
 
 
@@ -55,6 +66,12 @@ public class FormPanel extends JPanel {
         gc.anchor = GridBagConstraints.LINE_START;
         add(downloadBtn, gc);
 
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Download");
 
     }
 }

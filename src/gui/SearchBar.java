@@ -18,10 +18,11 @@ import java.util.ArrayList;
  */
 public class SearchBar extends JPanel implements ActionListener {
 
-    private JLabel searchLabel;
-    private JTextField searchField;
-    public JButton searchButton;
-    private DefaultTableModel infoTable;
+    private JLabel            searchLabel;
+    private JTextField        searchField;
+    public  JButton           searchButton;
+    public DefaultTableModel infoTable;
+    public JTable            table;
 
     public JTextField getSearchField() {
         return searchField;
@@ -44,24 +45,48 @@ public class SearchBar extends JPanel implements ActionListener {
 
         searchButton.addActionListener(this);
 
+        String[] header = { "Description", "Price", "Link" };
+        infoTable = new DefaultTableModel(header,0);
+        table = new JTable(infoTable);
 
-        setLayout(new FlowLayout(FlowLayout.LEFT));
-        add(searchLabel);
+
+        JScrollPane pane = new JScrollPane(table);
+        pane.setPreferredSize(new Dimension(700, 500));
+
+        setLayout(new GridBagLayout());
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        add(searchLabel, c);
+
+        c.gridx = 1;
+        c.gridy = 0;
         add(searchField);
+
+        c.gridx = 2;
+        c.gridy = 0;
         add(searchButton);
 
+        c.gridwidth = 3;
+        c.gridx = 0;
+        c.gridy = 1;
+        add(pane, c);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         try {
+
+
             //System.out.println(searchField.getText());
             String result = searchField.getText();
             Etsy etsy = new Etsy(searchField.getText());
             WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
             EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
             File f = new File("data/website/" + searchField.getText() + ".txt");
+            System.out.println(f.getAbsolutePath());
             OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), f);
             outputData.storeOutput();
             String stringToSplitPrice = data.cleanFileForPrice();
@@ -84,29 +109,15 @@ public class SearchBar extends JPanel implements ActionListener {
                 itemData.add(item);
             }
 
-            String[] header = { "Description", "Price", "Link" };
-            infoTable = new DefaultTableModel(header,0);
-
-
-
+            infoTable.setRowCount(0);
 
             for(ItemData item: itemData){
-
-
                 Object[][] dataInfo = new Object[1][3];
                 dataInfo[0][0] = item.getItemDescription();
                 dataInfo[0][1] = "$ " + item.getItemPrice();
                 dataInfo[0][2] = item.getImageLink();
                 infoTable.addRow(dataInfo[0]);
-
-
             }
-
-            JTable table = new JTable(infoTable);
-
-            add(new JScrollPane(table));
-
-            revalidate();
 
         } catch (Exception ex) {
             ex.printStackTrace();
