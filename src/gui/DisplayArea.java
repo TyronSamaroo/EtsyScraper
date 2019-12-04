@@ -29,6 +29,7 @@ public class DisplayArea extends JPanel {
     private JTextField searchField;
 
     public DisplayArea() throws Exception {
+        JLabel label = new JLabel("Your text here");
 
 
         searchBar = new SearchBar();
@@ -37,6 +38,10 @@ public class DisplayArea extends JPanel {
         System.out.println(dim);
         dim.width = 250;
         setPreferredSize(dim);
+
+        add(label);
+
+
 
 
     }

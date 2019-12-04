@@ -28,14 +28,7 @@ public class FormPanel extends JPanel implements ActionListener {
         downloadLabel = new JLabel("Download Image");
         downloadBtn = new JButton("Download");
 
-        downloadBtn.addActionListener(e -> {
 
-                ImageIcon image = new ImageIcon("appdata/images/tempImg.png");
-
-
-
-
-        });
 
 
 

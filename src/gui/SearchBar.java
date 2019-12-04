@@ -99,7 +99,7 @@ public class SearchBar extends JPanel implements ActionListener {
             priceArray = stringToSplitPrice.split("\n");
             descriptionArray = stringToSplitDescription.split("\n");
             imageLinkArray = stringToSplitImageSrc.split("\n");
-
+            StringBuilder results = new StringBuilder();
             ArrayList<ItemData> itemData = new ArrayList<>();
             for (int i = 0; i < priceArray.length; i++) {
                 String price = priceArray[i];
@@ -107,7 +107,15 @@ public class SearchBar extends JPanel implements ActionListener {
                 String image = imageLinkArray[i];
                 ItemData item = new ItemData(description,price,image);
                 itemData.add(item);
+                results.append(item);
+
             }
+
+            System.out.println("THIS IS");
+            System.out.println(results);
+            File ff = new File("data/results/" + searchField.getText() + ".txt");
+            OutputData resfie = new OutputData(results,ff);
+            resfie.storeOutput();
 
             infoTable.setRowCount(0);
 
@@ -120,6 +128,7 @@ public class SearchBar extends JPanel implements ActionListener {
             }
 
         } catch (Exception ex) {
+
             ex.printStackTrace();
         }
 
