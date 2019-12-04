@@ -86,6 +86,7 @@ public class SearchBar extends JPanel implements ActionListener {
             WebpageReader webpageReader = new WebpageReader(etsy.getWebpage());
             EtsyCleanData data = new EtsyCleanData(webpageReader.rawHTMLFile());
             File f = new File("data/website/" + searchField.getText() + ".txt");
+            System.out.println(f.getAbsolutePath());
             OutputData outputData = new OutputData(webpageReader.rawHTMLFile(), f);
             outputData.storeOutput();
             String stringToSplitPrice = data.cleanFileForPrice();
