@@ -40,6 +40,10 @@ public class OutputData {
         this.text = text;
     }
 
+    /**
+     * This stores the output. This MUST BE done after declare Object with given Params.
+     * @throws IOException
+     */
     public void storeOutput() throws IOException {
         RandomAccessFile stream = new RandomAccessFile(this.fileName, "rw");
         FileChannel channel = stream.getChannel();

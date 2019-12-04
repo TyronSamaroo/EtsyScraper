@@ -6,5 +6,13 @@ To run the GUI on Command Line
 2. To Compile `java gui/App.java`
 3. To Run `java gui.App`
 
+## Images 
+
+To download Images click the row in the GUI and then click
+the download button.
+
+
+
+
 
 

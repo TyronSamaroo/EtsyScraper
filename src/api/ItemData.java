@@ -4,6 +4,7 @@ package api;
  * Relevent Information About Search Result
  *
  * @author tyronsamaroo
+ * Thi
  */
 public class ItemData {
 
@@ -17,6 +18,13 @@ public class ItemData {
         this.imageLink = null;
 
     }
+
+    /**
+     * This one constructor where you provide three param mentioned below
+     * @param itemDescription Description of the Item
+     * @param itemPrice Price of the Item
+     * @param imageLink Link of the Item
+     */
     public ItemData(String itemDescription, String itemPrice, String imageLink) {
 
         this.itemDescription = itemDescription;
@@ -48,6 +56,10 @@ public class ItemData {
         this.imageLink = imageLink;
     }
 
+    /**
+     * This overrides the String method
+     * @return Return in easy to read way.
+     */
     @Override
     public String toString() {
         return "itemDescription: " + itemDescription + "itemPrice: " + itemPrice + "imageLink: " + imageLink;

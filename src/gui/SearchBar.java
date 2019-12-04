@@ -108,11 +108,11 @@ public class SearchBar extends JPanel implements ActionListener {
                 ItemData item = new ItemData(description,price,image);
                 itemData.add(item);
                 results.append(item);
+                results.append("\n");
 
             }
 
-            System.out.println("THIS IS");
-            System.out.println(results);
+            System.out.println("THIS IS IS");
             File ff = new File("data/results/" + searchField.getText() + ".txt");
             OutputData resfie = new OutputData(results,ff);
             resfie.storeOutput();

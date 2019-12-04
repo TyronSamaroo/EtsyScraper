@@ -5,8 +5,18 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * @author tyronsamaroo
+ * Download Image from Etsy
+ */
 public class ImageDownload {
 
+    /**
+     *
+     * @param imgUrl This is image URL that you will provide as a String
+     * @param destinationFile This is the file you want to save the image too.
+     * @return
+     */
      public Boolean downloadImage(String imgUrl, String destinationFile) {
         try {
             URL url = new URL(imgUrl);
