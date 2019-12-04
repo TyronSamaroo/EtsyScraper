@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
            System.out.println(name);
 
            imageDownload.downloadImage(img,imageDir + name + ".jpg");
-
+           formPanel.setLabelImage(name);
           // System.out.println(searchBar.infoTable.getValueAt(searchBar.table.getSelectedRow(),2));
 
 
