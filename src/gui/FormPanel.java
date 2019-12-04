@@ -22,13 +22,13 @@ public class FormPanel extends JPanel implements ActionListener {
     public FormPanel() {
         Dimension dim = getPreferredSize();
         System.out.println(dim);
-        dim.width = 250;
+        dim.width = 600;
         setPreferredSize(dim);
 
-        downloadLabel = new JLabel("Download Image");
         downloadBtn = new JButton("Download");
 
-
+        ImageIcon resImage = new ImageIcon("data/image/1.jpg");
+        downloadLabel = new JLabel(resImage);
 
 
 
@@ -47,8 +47,6 @@ public class FormPanel extends JPanel implements ActionListener {
         gc.gridy = 0;
 //        gc.weightx = 1;
 //        gc.weighty = 1;
-        gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_END;
         gc.insets = new Insets(0, 0, 0, 5);
         add(downloadLabel, gc);
 
@@ -66,5 +64,11 @@ public class FormPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         System.out.println("Download");
 
+    }
+
+
+    public void setLabelImage(String imageName){
+      ImageIcon resImage = new ImageIcon("data/image/"+ imageName + ".jpg");
+      downloadLabel.setIcon(resImage);
     }
 }
